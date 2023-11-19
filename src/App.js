@@ -22,7 +22,7 @@ function App() {
         // Adjust the fetch call to send data as query parameters
         const queryParams = new URLSearchParams({ question: question });
 
-        fetch(`https://york-u-1645958382.us-west-2.elb.amazonaws.com:8080/Chatbot_war/chatbot/?${queryParams.toString()}`, {
+        fetch(`http://york-u-1645958382.us-west-2.elb.amazonaws.com:8080/Chatbot_war/chatbot/?${queryParams.toString()}`, {
             method: 'POST'
         })
             .then(response => {
