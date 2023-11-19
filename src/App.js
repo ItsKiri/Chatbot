@@ -49,7 +49,7 @@ function App() {
             }}>
                 <Form
                     actions={
-                        <Button variant="primary" onClick={handleSubmit}>Submit</Button>
+                        <Button variant="primary" onClick={handleSubmit} disabled={flag}>Submit</Button>
                     }
                 >
                     <Container
