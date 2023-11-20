@@ -19,10 +19,9 @@ function App() {
     const handleSubmit = () => {
         setFlag(true);
         setAnswer("");
-        // Adjust the fetch call to send data as query parameters
         const queryParams = new URLSearchParams({ question: question });
 
-        fetch(`http://york-u-1645958382.us-west-2.elb.amazonaws.com:8080/Chatbot_war/chatbot/?${queryParams.toString()}`, {
+        fetch(`server_endpoint/?${queryParams.toString()}`, {
             method: 'POST'
         })
             .then(response => {
@@ -32,7 +31,6 @@ function App() {
                 return response.json();
             })
             .then(data => {
-                // Adjust according to the structure of the response from your server
                 setAnswer(data.text || "Sorry, no response from server.");
             })
             .catch(error => console.error('There was an error!', error))
